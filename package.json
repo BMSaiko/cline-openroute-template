@@ -1,0 +1,28 @@
+{
+  "name": "cline-openroute-template",
+  "version": "1.0.0",
+  "description": "Template para projetos Cline com resiliência OpenRoute (rate limiting, cache, compressão, fallback)",
+  "main": "src/openroute-client.js",
+  "scripts": {
+    "test": "node tests/simulate-429.js",
+    "test:rate-limit": "node -e \"const {OpenRouteRateLimiter} = require('./src/rate-limiter'); const l = new OpenRouteRateLimiter(); console.log('Rate limiter OK');\"",
+    "test:cache": "node -e \"const {TTLCache} = require('./src/cache'); const c = new TTLCache(); console.log('Cache OK');\""
+  },
+  "keywords": [
+    "cline",
+    "openroute",
+    "rate-limiting",
+    "cache",
+    "fallback",
+    "resilience"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
